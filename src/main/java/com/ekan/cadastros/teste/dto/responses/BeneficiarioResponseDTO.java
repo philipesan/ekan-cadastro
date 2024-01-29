@@ -1,4 +1,4 @@
-package com.ekan.cadastros.teste.entities;
+package com.ekan.cadastros.teste.dto.responses;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,10 +6,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,21 +20,13 @@ import lombok.ToString;
 @Builder
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-
-@Entity
-public class Beneficiario {
-
-	@Id @GeneratedValue
+public class BeneficiarioResponseDTO {
 	private Long id;
 	private String nome;
 	private String telefone;
 	private LocalDate dtNascimento;
 	private LocalDateTime dtInclusao;
 	private LocalDateTime dtAtualizacao;
+	private List<DocumentoResponseDTO> documentos;
 	private Integer status;
-	
-	public static String formataTelefone(String telefone) {
-		return telefone.replaceAll("[^0-9]", "");
-
-	}
 }

@@ -1,4 +1,4 @@
-package com.ekan.cadastros.teste.dto.responses;
+package com.ekan.cadastros.teste.dto.requests;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -14,8 +14,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ApiResponseDTO {
-	private Object content;
-	private String message;
+public class DocumentoRequestDTO {
+	
+	private Long id;
+	private String descricao;
+	private String tipoDocumento;
+	private Integer status;
 }
-
